@@ -1,0 +1,15 @@
+*.md                    @agnusmor
+aggregator/             @agnusmor
+cmd/                    @ToniRamirezM
+config/                 @agnusmor 
+db/                     @ToniRamirezM
+docs/                   @agnusmor
+etherman/               @ToniRamirezM
+ethtxmanager/           @ToniRamirezM @agnusmor
+merkletree/             @ToniRamirezM
+pool/                   @ToniRamirezM @dpunish3r @agnusmor
+proto/                  @ToniRamirezM
+sequencer/              @ToniRamirezM @dpunish3r @agnusmor
+sequencesender/         @ToniRamirezM @dpunish3r @agnusmor
+state/                  @ToniRamirezM @dpunish3r @agnusmor
+test/                   @ToniRamirezM @dpunish3r @agnusmor
