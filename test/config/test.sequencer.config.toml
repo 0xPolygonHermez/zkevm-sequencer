@@ -1,0 +1,128 @@
+[Log]
+Environment = "development" # "production" or "development"
+Level = "debug"
+Outputs = ["stderr"]
+
+[State]
+	[State.DB]
+	User = "state_user"
+	Password = "state_password"
+	Name = "state_db"
+	Host = "zkevm-state-db"
+	Port = "5432"
+	EnableLog = false	
+	MaxConns = 200
+	[State.Batch]
+		[State.Batch.Constraints]
+		MaxTxsPerBatch = 300
+		MaxBatchBytesSize = 120000
+		MaxCumulativeGasUsed = 30000000
+		MaxKeccakHashes = 2145
+		MaxPoseidonHashes = 252357
+		MaxPoseidonPaddings = 135191
+		MaxMemAligns = 236585
+		MaxArithmetics = 236585
+		MaxBinaries = 473170
+		MaxSteps = 7570538
+
+[Pool]
+FreeClaimGasLimit = 1500000
+IntervalToRefreshBlockedAddresses = "5m"
+IntervalToRefreshGasPrices = "5s"
+MaxTxBytesSize=100132
+MaxTxDataBytesSize=100000
+DefaultMinGasPriceAllowed = 1000000000
+MinAllowedGasPriceInterval = "5m"
+PollMinAllowedGasPriceInterval = "15s"
+AccountQueue = 64
+GlobalQueue = 1024
+	[Pool.EffectiveGasPrice]
+		Enabled = false
+		L1GasPriceFactor = 0.25
+		ByteGasCost = 16
+		ZeroByteGasCost = 4
+		NetProfit = 1
+	    BreakEvenFactor = 1.1			
+		FinalDeviationPct = 10
+		L2GasPriceSuggesterFactor = 0.5
+	[Pool.DB]
+	User = "pool_user"
+	Password = "pool_password"
+	Name = "pool_db"
+	Host = "zkevm-pool-db"
+	Port = "5432"
+	EnableLog = false
+	MaxConns = 200
+
+[Etherman]
+URL = "http://zkevm-mock-l1-network:8545"
+ForkIDChunkSize = 20000
+MultiGasProvider = false
+	[Etherscan]
+		ApiKey = ""
+
+[Sequencer]
+WaitPeriodPoolIsEmpty = "1s"
+LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+BlocksAmountForTxsToBeDeleted = 100
+FrequencyToCheckTxsForDelete = "12h"
+TxLifetimeCheckTimeout = "10m"
+MaxTxLifetime = "3h"
+	[Sequencer.Finalizer]
+		GERDeadlineTimeout = "2s"
+		ForcedBatchDeadlineTimeout = "5s"
+		SleepDuration = "100ms"
+		ResourcePercentageToCloseBatch = 10
+		GERFinalityNumberOfBlocks = 0
+		ClosingSignalsManagerWaitForCheckingL1Timeout = "10s"
+		ClosingSignalsManagerWaitForCheckingGER = "10s"
+		ClosingSignalsManagerWaitForCheckingForcedBatches = "10s"
+		ForcedBatchesFinalityNumberOfBlocks = 0
+		TimestampResolution = "10s"
+		StopSequencerOnBatchNum = 0
+	[Sequencer.DBManager]
+		PoolRetrievalInterval = "500ms"
+		L2ReorgRetrievalInterval = "5s"
+	[Sequencer.StreamServer]
+		Port = 6900
+		Filename = "/datastreamer/datastream.bin"
+		Enabled = true
+
+[SequenceSender]
+WaitPeriodSendSequence = "15s"
+LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+MaxTxSizeForL1 = 131072
+L2Coinbase = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+PrivateKey = {Path = "/pk/sequencer.keystore", Password = "testonly"}
+
+[EthTxManager]
+ForcedGas = 0
+PrivateKeys = [
+	{Path = "/pk/sequencer.keystore", Password = "testonly"},
+	{Path = "/pk/aggregator.keystore", Password = "testonly"}
+]
+
+[MTClient]
+URI  = "zkevm-prover:50061"
+
+[Executor]
+URI = "zkevm-prover:50071"
+MaxGRPCMessageSize = 100000000
+
+[Metrics]
+Host = "0.0.0.0"
+Port = 9091
+Enabled = true
+ProfilingHost = "0.0.0.0"
+ProfilingPort = 6060
+ProfilingEnabled = true
+
+[EventLog]
+	[EventLog.DB]
+	User = "event_user"
+	Password = "event_password"
+	Name = "event_db"
+	Host = "zkevm-event-db"
+	Port = "5432"
+	EnableLog = false
+	MaxConns = 200
