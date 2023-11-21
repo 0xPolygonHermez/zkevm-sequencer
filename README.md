@@ -1,2 +1,1 @@
-# zkevm-sequencer
-zkEVM Sequencer
+# zkEVM Sequencer
