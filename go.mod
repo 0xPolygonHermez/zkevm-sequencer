@@ -7,7 +7,7 @@ require (
 	github.com/0xPolygonHermez/zkevm-node v0.4.0
 	github.com/dop251/goja v0.0.0-20230806174421-c933cf95e127
 	github.com/ethereum/go-ethereum v1.13.2
-	github.com/fatih/color v1.15.0
+	github.com/fatih/color v1.16.0
 	github.com/gobuffalo/packr/v2 v2.8.3
 	github.com/google/uuid v1.4.0
 	github.com/hermeznetwork/tracerr v0.3.2
@@ -97,7 +97,7 @@ require (
 	github.com/markbates/oncer v1.0.0 // indirect
 	github.com/markbates/safe v1.0.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0 // indirect
 	github.com/mmcloughlin/addchain v0.4.0 // indirect
