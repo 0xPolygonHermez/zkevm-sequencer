@@ -3,8 +3,8 @@ module github.com/0xPolygonHermez/zkevm-sequencer
 go 1.21
 
 require (
-	github.com/0xPolygonHermez/zkevm-data-streamer v0.1.11
-	github.com/0xPolygonHermez/zkevm-node v0.4.0
+	github.com/0xPolygonHermez/zkevm-data-streamer v0.1.14
+	github.com/0xPolygonHermez/zkevm-node v0.4.3
 	github.com/dop251/goja v0.0.0-20230806174421-c933cf95e127
 	github.com/ethereum/go-ethereum v1.13.2
 	github.com/fatih/color v1.15.0
